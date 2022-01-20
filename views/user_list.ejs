@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escaleSolutionAssignmentByHimanshuGupta</title>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <ol>
+        <% for( let i=0; i < user_list.length; i++ ) { %>
+            <li><a href="<%= user_list[i].url %> " target="_blank">
+                    <%= user_list[i].name %>
+                </a></li>
+            <% } %>
+    </ol>
+    <% if (user_list.length===0) { %>
+        <ul>
+            <li>There are no Users</li>
+        </ul>
+        <% } %>
+
+            <hr>
+            <div>
+                <a href="/catalog/user/create">Create a New User</a>
+            </div>
+
+</body>
+
+</html>

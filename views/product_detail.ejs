@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escaleSolutionAssignmentByHimanshuGupta</title>
+</head>
+
+<body>
+    <h2>
+        <%= title %>
+    </h2>
+    <ul>
+        <li>Name: <%= product.name %>
+        </li>
+        <li>MRP: <%= product.mrp %>
+        </li>
+        <li>Description: <%= product.description %>
+        </li>
+        <li>User: <a href="<%= product.user.url %> ">
+                <%= product.user.name %>
+            </a>
+        </li>
+        <li>Business: <% if (product.business) { %>
+                <a href="<%= product.business.url %> ">
+                    <%= product.business.name %>
+                </a>
+                <% } else { %>
+                    This product was directly created by the User
+                    <% } %>
+        </li>
+        <hr>
+        <div>
+            <a href="<%= product.url+'/update' %> ">Update Product</a>
+        </div>
+        <br>
+        <div>
+            <a href="<%= product.url+'/delete' %> ">Delete Product</a>
+        </div>
+        <hr>
+        <div>
+            <a href="/">Home</a>
+        </div>
+
+
+</body>
+
+</html>

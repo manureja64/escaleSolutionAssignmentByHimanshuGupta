@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escaleSolutionAssignmentByHimanshuGupta</title>
+</head>
+
+<body>
+    <h2>
+        <%= title %>
+    </h2>
+    <ul>
+        <li>Name: <%= business.name %>
+        </li>
+        <li>Email: <%= business.email %>
+        </li>
+        <li>Registration Number: <%= business.registrationNo %>
+        </li>
+        <li>User: <a href="<%= business.user.url %> ">
+                <%= business.user.name %>
+            </a>
+        </li>
+        <li>Products:
+            <% if (business_products.length===0) { %>
+                There are NO products.
+                <% } else { %>
+                    There are following products in this business:
+                    <% for( let i=0; i < business_products.length; i++ ) { %>
+                        <ol>
+                            <li>
+                                <a href="<%= business_products[i].url %>">
+                                    <%= business_products[i].name %>
+                                </a>
+                            </li>
+                        </ol>
+                        <% } %>
+                            <% } %>
+
+        </li>
+    </ul>
+    <div>
+        <a href="/catalog/product/business/create/<%= business._id %> " target="_blank">Create a Product</a>
+    </div>
+    <hr>
+    <div>
+        <a href="/">Home</a>
+    </div>
+
+</body>
+
+</html>

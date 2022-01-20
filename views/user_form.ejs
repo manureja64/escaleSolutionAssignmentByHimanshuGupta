@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escaleSolutionAssignmentByHimanshuGupta</title>
+
+</head>
+
+<body>
+    <h2>
+        <%= title %>
+    </h2>
+
+    <form action="" method='POST'>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" <%=(null===user?'':user.name) %>>
+            <br><label for="email">Email: </label>
+            <input type="email" name="email" id="email" value="<%= (null===user?'':user.email) %> ">
+            <br><label for="bio">Bio: </label>
+            <textarea name="bio" id="bio" cols="30" rows="10"><%= (null===user?'':user.bio) %> </textarea>
+            <br><button type="submit">Submit</button>
+        </div>
+        <% if (errors) { %>
+            <ul>
+                <% for( let i=0; i < errors.length; i++ ) { %>
+                    <li>
+                        <%= errors[i].msg %>
+                    </li>
+                    <% } %>
+            </ul>
+
+            <% } %>
+    </form>
+    <hr>
+    <br>
+    <div>
+        <a href="/">Home</a>
+    </div>
+
+</body>
+
+</html>

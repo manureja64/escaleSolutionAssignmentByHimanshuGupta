@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escaleSolutionAssignmentByHimanshuGupta</title>
+</head>
+
+<body>
+    <h2>
+        <%= title %>
+    </h2>
+    <form action="" method='POST'>
+        <div>
+            <% if (product.user) { %>
+                <input type="hidden" name="user" required="true" value="<%= (null===product?'':product.user._id) %> ">
+                <% } else { %>
+                    <input type="hidden" name="user" required="true" value="<%= null===product?'':undefined %> ">
+                    <% } %>
+
+                        <% if (product.business) { %>
+                            <input type="hidden" name="business" required="true"
+                                value="<%= null===product?'':product.business._id %> ">
+                            <% } else { %>
+                                <input type="hidden" name="business" required="true"
+                                    value="<%= null===product?'':undefined %> ">
+                                <% } %>
+
+                                    <label for="name">Name: </label>
+                                    <input type="text" name="name" id="name"
+                                        value="<%= null===product?'':product.name %> ">
+                                    <br><label for="mrp">MRP: </label>
+                                    <input type="number" name="mrp" id="mrp" value=<%=(null===product?'':product.mrp) %>
+                                    >
+                                    <br><label for="description">Description: </label>
+                                    <input type="text" name="description" id="description"
+                                        value="<%= null===product?'':product.description %> ">
+                                    <br><button type="submit">Submit</button>
+        </div>
+        <% if (errors) { %>
+            <ul>
+                <% for( let i=0; i < errors.length; i++ ) { %>
+                    <li>
+                        <%= errors[i].msg %>
+                    </li>
+                    <% } %>
+            </ul>
+
+            <% } %>
+    </form>
+    <hr>
+    <div>
+        <a href="/">Home</a>
+    </div>
+
+</body>
+
+</html>
